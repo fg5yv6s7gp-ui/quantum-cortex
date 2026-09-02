@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Cortex — Research Archive</title>
+  <meta name="description" content="A living archive for quantum neuroscience research notes, preprints, and commentary." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%23070b14' width='64' height='64' rx='12'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%238b6cff' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%2322d3ee'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-name">Quantum <span>Cortex</span></div>
+      </a>
+      <nav class="nav-links">
+        <a href="#archive">Archive</a>
+        <a href="#topics">Topics</a>
+        <a href="#about">About</a>
+        <a class="cta" href="#post">Post research</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="kicker">Independent research notebook</p>
+        <h1>Post quantum neuroscience research in one place.</h1>
+        <p class="lede">Quantum Cortex is a small public desk for notes at the seam of quantum physics and the brain — microtubules and anesthesia, quantum-like cognition, quantum sensors for neurons, and models that treat neural networks as information systems.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#post">Write a note</a>
+          <a class="btn btn-ghost" href="#archive">Read the archive</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b id="post-count">4</b><span>notes in this browser</span></div>
+          <div class="stat"><b id="user-count">0</b><span>posted by you</span></div>
+          <div class="stat"><b>local</b><span>saved on this device</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="archive">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Archive</h2>
+            <p>Seed papers are examples. Anything you post stays in this browser only.</p>
+          </div>
+          <button class="btn btn-ghost" id="reset-archive" type="button">Reset samples</button>
+        </div>
+        <div class="toolbar">
+          <input class="search" id="search" type="search" placeholder="Search title, author, abstract, tag…" />
+        </div>
+        <div class="chips" id="chips"></div>
+        <div class="feed" id="feed"></div>
+      </div>
+    </section>
+    <section id="topics">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Live questions in the field</h2>
+            <p>Use these as tags when you post. The science is unsettled. That is the point.</p>
+          </div>
+        </div>
+        <div class="topics">
+          <article class="topic"><h3>Quantum biology in neurons</h3><p>Can coherence, tunneling, or nuclear spin survive long enough in warm tissue to change firing, olfaction, or anesthesia?</p></article>
+          <article class="topic"><h3>Orch-OR and microtubules</h3><p>Penrose–Hameroff still drive experiments on anesthetic binding and claimed room-temperature quantum effects in tubulin.</p></article>
+          <article class="topic"><h3>Quantum-like cognition</h3><p>Quantum probability as a math language for context, order effects, and mental entanglement — even if the wetware is classical.</p></article>
+          <article class="topic"><h3>Quantum sensors and materials</h3><p>2D semiconductors, NV centers, and nano-NMR as tools to watch cells, not claims that the cell itself is a qubit.</p></article>
+          <article class="topic"><h3>Quantum computing for neuroscience</h3><p>Using actual quantum hardware or QML on EEG, MRI, connectomes, and protein data that choke classical pipelines.</p></article>
+          <article class="topic"><h3>Neuromorphic quantum hardware</h3><p>Spin glasses, optical associative memory, and materials that compute like synapses rather than like Turing tapes.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="post">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Post a note</h2>
+            <p>Title, authors, a short abstract. Optional link to the paper or preprint.</p>
+          </div>
+        </div>
+        <form class="form-panel" id="post-form">
+          <div class="form-grid">
+            <div class="field full"><label for="title">Title</label><input id="title" name="title" required maxlength="220" placeholder="A short, specific title" /></div>
+            <div class="field"><label for="authors">Authors</label><input id="authors" name="authors" required placeholder="Your name, collaborators" /></div>
+            <div class="field"><label for="year">Year</label><input id="year" name="year" placeholder="2026" /></div>
+            <div class="field"><label for="tags">Tags</label><input id="tags" name="tags" placeholder="microtubules, EEG, review" /></div>
+            <div class="field"><label for="link">Link (optional)</label><input id="link" name="link" type="url" placeholder="https://arxiv.org/abs/…" /></div>
+            <div class="field full"><label for="abstract">Abstract / note</label><textarea id="abstract" name="abstract" required placeholder="What did you find, claim, or want others to look at?"></textarea></div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Publish to archive</button>
+            <span class="hint">Stored locally in your browser. Not uploaded to a server.</span>
+            <span class="toast" id="toast"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>About this desk</h2>
+            <p>Built as a working prototype, not a peer-review journal.</p>
+          </div>
+        </div>
+        <div class="card">
+          <p class="abstract">Quantum neuroscience sits in a noisy gap. Some papers hunt for real quantum effects inside neurons. Some only borrow quantum math because it fits cognitive data. Some build sensors and algorithms that help neuroscience without claiming the brain is quantum at all. This site keeps those threads in one feed so you can post a preprint, a lab note, or a skeptical comment next to the sample archive.</p>
+          <p class="abstract" style="margin-top:12px">Honest limit: posts live in <strong>localStorage</strong>. Open the same browser on this machine and they are still here. Clear site data or switch devices and they are gone. If you want a real multi-user backend later, that is the next engineering step.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap foot-row">
+      <div>Quantum Cortex · research notebook</div>
+      <div>Not affiliated with a university or publisher.</div>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
