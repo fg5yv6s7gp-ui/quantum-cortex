@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=8" />
+  <link rel="stylesheet" href="css/styles.css?v=9" />
 </head>
 <body>
   <canvas id="neural-field" aria-hidden="true"></canvas>
@@ -21,6 +21,7 @@
         <div class="brand-name">Quantum <span>Cortex</span></div>
       </a>
       <nav class="nav-links">
+        <a href="#search">Search</a>
         <a href="#quantum-physics">Quantum physics</a>
         <a href="#neuroscience">Neuroscience</a>
         <a href="#about">About</a>
@@ -42,6 +43,19 @@
       </div>
     </section>
 
+    <section id="search">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Search</h2>
+            <p>Look through the notes by word, title, or topic.</p>
+          </div>
+        </div>
+        <input class="search" id="site-search" type="search" placeholder="Search quantum physics or neuroscience…" />
+        <p class="search-status" id="search-status"></p>
+      </div>
+    </section>
+
     <section id="quantum-physics">
       <div class="wrap">
         <div class="section-head">
@@ -50,8 +64,8 @@
             <p>Plain-language notes on how the small world works, and how it shows up in daily life.</p>
           </div>
         </div>
-        <article class="card long-note">
-          <div class="card-meta"><span>2026</span><span class="tag">primer</span><span>A.</span></div>
+        <article class="card long-note note">
+          <div class="card-meta"><span class="tag">primer</span><span>A.</span></div>
           <h3>Quantum physics in simple language — how it works in daily life</h3>
           <div class="authors">A.</div>
           <div class="abstract" style="white-space:pre-wrap">Quantum physics is the science of very small things: atoms, electrons, and particles of light.
@@ -123,8 +137,8 @@ The real theory is strict. It gives numbers. Experiments test those numbers. Whe
             <p>Notes on the brain, nerves, and how actions get built from cells. This section is new. More notes can go here.</p>
           </div>
         </div>
-        <article class="card">
-          <div class="card-meta"><span>2026</span><span class="tag violet">open</span><span>A.</span></div>
+        <article class="card note">
+          <div class="card-meta"><span class="tag violet">open</span><span>A.</span></div>
           <h3>Neuroscience desk</h3>
           <div class="authors">A.</div>
           <p class="abstract">This section is for brain science on its own terms: neurons, circuits, memory, sensing, and action. It is not a dump of quantum slogans onto the brain. First notes can start here.</p>
@@ -158,6 +172,23 @@ The real theory is strict. It gives numbers. Experiments test those numbers. Whe
 
   <div class="live-clock">Vancouver, BC</div>
 
-  <script src="js/neural-field.js?v=8"></script>
+  <script src="js/neural-field.js?v=9"></script>
+  <script>
+    (function () {
+      var input = document.getElementById("site-search");
+      var status = document.getElementById("search-status");
+      var notes = document.querySelectorAll(".note");
+      input.addEventListener("input", function () {
+        var q = input.value.toLowerCase().trim();
+        var shown = 0;
+        notes.forEach(function (note) {
+          var hit = !q || note.textContent.toLowerCase().indexOf(q) !== -1;
+          note.style.display = hit ? "" : "none";
+          if (hit) shown += 1;
+        });
+        status.textContent = q ? (shown + " note" + (shown === 1 ? "" : "s") + " match") : "";
+      });
+    })();
+  </script>
 </body>
 </html>
