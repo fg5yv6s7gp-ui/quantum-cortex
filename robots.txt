@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fg5yv6s7gp-ui.github.io/quantum-cortex/sitemap.xml
