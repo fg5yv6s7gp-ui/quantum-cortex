@@ -213,33 +213,15 @@ footer {
   right: 18px;
   bottom: 18px;
   z-index: 50;
-  min-width: 168px;
-  padding: 10px 14px;
-  border-radius: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(7, 11, 20, 0.86);
   backdrop-filter: blur(12px);
-  box-shadow: var(--shadow);
   font-family: var(--mono);
-  text-align: right;
-}
-.live-clock .place {
-  display: block;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
   color: var(--cyan);
-}
-.live-clock .time {
-  display: block;
-  font-size: 1.05rem;
-  color: var(--text);
-  margin-top: 2px;
-}
-.live-clock .date {
-  display: block;
-  font-size: 0.72rem;
-  color: var(--muted);
 }
 
 @media (max-width: 720px) {
