@@ -113,17 +113,17 @@ function filtered() {
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     .filter((p) => {
       const tagOk = activeTag === "all" || (p.tags || []).includes(activeTag);
-      const hay = `${p.title} ${p.authors} ${p.abstract} ${(p.tags || []).join(" ")}`.toLowerCase();
+      const hay = [p.title, p.authors, p.abstract, (p.tags || []).join(" ")].join(" ").toLowerCase();
       return tagOk && (!q || hay.includes(q));
     });
 }
 
 function escapeHtml(s) {
   return String(s || "")
-    .replace(/&/g, "&")
-    .replace(/</g, "<")
-    .replace(/>/g, ">")
-    .replace(/"/g, """);
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 function escapeAttr(s) {
   return escapeHtml(s).replace(/'/g, "&#39;");
@@ -133,29 +133,35 @@ function renderFeed() {
   const list = filtered();
   feedEl.innerHTML = "";
   if (!list.length) {
-    feedEl.innerHTML = `<div class=\"empty\">No notes match that filter. Post the first one, or clear search.</div>`;
+    feedEl.innerHTML = '<div class="empty">No notes match that filter. Post the first one, or clear search.</div>';
     return;
   }
   list.forEach((p) => {
     const el = document.createElement("article");
     el.className = "card";
     const tags = (p.tags || [])
-      .map((t, i) => `<span class=\"tag ${i % 2 ? \"violet\" : \"\"}\">${escapeHtml(t)}</span>`)
+      .map((t, i) => '<span class="tag ' + (i % 2 ? "violet" : "") + '">' + escapeHtml(t) + "</span>")
       .join("");
-    el.innerHTML = `
-      <div class=\"card-meta\">
-        <span>${escapeHtml(p.year || \"\")}</span>
-        ${tags}
-        ${p.seed ? `<span>archive seed</span>` : `<span>your post</span>`}
-      </div>
-      <h3>${escapeHtml(p.title)}</h3>
-      <div class=\"authors\">${escapeHtml(p.authors)}</div>
-      <p class=\"abstract\" style=\"white-space:pre-wrap\">${escapeHtml(p.abstract)}</p>
-      <div class=\"card-foot\">
-        ${p.link ? `<a class=\"link-out\" href=\"${escapeAttr(p.link)}\" target=\"_blank\" rel=\"noopener\">Open source →</a>` : `<span></span>`}
-        ${p.seed ? \"\" : `<button class=\"delete-btn\" data-id=\"${p.id}\">Remove</button>`}
-      </div>
-    `;
+    const linkHtml = p.link
+      ? '<a class="link-out" href="' + escapeAttr(p.link) + '" target="_blank" rel="noopener">Open source →</a>'
+      : "<span></span>";
+    const deleteHtml = p.seed ? "" : '<button class="delete-btn" data-id="' + p.id + '">Remove</button>';
+    el.innerHTML =
+      '<div class="card-meta"><span>' +
+      escapeHtml(p.year || "") +
+      "</span>" +
+      tags +
+      (p.seed ? "<span>archive seed</span>" : "<span>your post</span>") +
+      "</div><h3>" +
+      escapeHtml(p.title) +
+      '</h3><div class="authors">' +
+      escapeHtml(p.authors) +
+      '</div><p class="abstract" style="white-space:pre-wrap">' +
+      escapeHtml(p.abstract) +
+      '</p><div class="card-foot">' +
+      linkHtml +
+      deleteHtml +
+      "</div>";
     feedEl.appendChild(el);
   });
   feedEl.querySelectorAll(".delete-btn").forEach((btn) => {
