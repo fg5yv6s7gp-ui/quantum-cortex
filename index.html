@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quantum Cortex — Research Archive</title>
-  <meta name="description" content="A living archive for quantum neuroscience research notes, preprints, and commentary." />
+  <title>Quantum Cortex — Research</title>
+  <meta name="description" content="Research notes in quantum physics and neuroscience." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%23070b14' width='64' height='64' rx='12'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%238b6cff' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%2322d3ee'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=4" />
+  <link rel="stylesheet" href="css/styles.css?v=5" />
 </head>
 <body>
   <canvas id="neural-field" aria-hidden="true"></canvas>
@@ -21,11 +21,10 @@
         <div class="brand-name">Quantum <span>Cortex</span></div>
       </a>
       <nav class="nav-links">
-        <a href="#archive">Archive</a>
-        <a href="#topics">Topics</a>
-        <a href="#publisher">Publisher</a>
+        <a href="#quantum-physics">Quantum physics</a>
+        <a href="#neuroscience">Neuroscience</a>
+        <a href="#post">Post</a>
         <a href="#about">About</a>
-        <a class="cta" href="#post">Post research</a>
       </nav>
     </div>
   </header>
@@ -34,76 +33,105 @@
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="wrap hero-inner">
-        <p class="kicker">Independent research notebook</p>
-        <h1>Post quantum neuroscience research in one place.</h1>
-        <p class="lede">
-          Quantum Cortex is a small public desk for notes at the seam of quantum physics and the brain —
-          microtubules and anesthesia, quantum-like cognition, quantum sensors for neurons,
-          and models that treat neural networks as information systems.
-        </p>
+        <p class="kicker">Research notebook</p>
+        <h1>Two desks. One site.</h1>
+        <p class="lede">Quantum physics and neuroscience, kept in separate sections so each field can stand on its own.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#post">Write a note</a>
-          <a class="btn btn-ghost" href="#archive">Read the archive</a>
-        </div>
-        <div class="stats">
-          <div class="stat"><b id="post-count">5</b><span>notes in this browser</span></div>
-          <div class="stat"><b id="user-count">0</b><span>posted by you</span></div>
-          <div class="stat"><b>local</b><span>saved on this device</span></div>
+          <a class="btn btn-primary" href="#quantum-physics">Quantum physics</a>
+          <a class="btn btn-ghost" href="#neuroscience">Neuroscience</a>
         </div>
       </div>
     </section>
 
-    <section id="archive">
+    <section id="quantum-physics">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2>Archive</h2>
-            <p>The first desk note is a plain-language primer. Sample papers sit under it.</p>
+            <h2>Quantum physics</h2>
+            <p>Plain-language notes on how the small world works, and how it shows up in daily life.</p>
           </div>
-          <button class="btn btn-ghost" id="reset-archive" type="button">Reset samples</button>
         </div>
-        <div class="toolbar">
-          <input class="search" id="search" type="search" placeholder="Search title, author, abstract, tag…" />
-        </div>
-        <div class="chips" id="chips"></div>
-        <div class="feed" id="feed"></div>
+        <article class="card long-note">
+          <div class="card-meta"><span>2026</span><span class="tag">primer</span><span>A.</span></div>
+          <h3>Quantum physics in simple language — how it works in daily life</h3>
+          <div class="authors">A.</div>
+          <div class="abstract" style="white-space:pre-wrap">Quantum physics is the science of very small things: atoms, electrons, and particles of light.
+
+The big world looks solid and simple. A chair is in one place. A switch is on or off. A ball moves in a path you can watch. Quantum physics says the smallest pieces of that world do not always follow those everyday pictures.
+
+That does not mean your house is fake. It means the parts inside your house follow a stricter, stranger set of rules. Those rules still make the normal world work.
+
+The basic idea
+
+In daily life, a thing is one thing at a time. A coin is heads or tails. A light is on or off.
+
+At the atomic scale, a system can hold more than one possibility at once. This is called superposition. It is not only “we do not know yet.” The system is not forced to be a single option until something definite happens.
+
+That definite event is a measurement. A detector clicks. Light hits a sensor. A device records one answer. After that, there is one result.
+
+Two tiny things can also share one description after they interact. This is entanglement. Checking one is linked to the other, even if they are far apart. This is not a message racing between them after you look. The link was already in their shared state. It also does not let you send a useful text faster than light. One side still looks random until both results are compared.
+
+There is a limit as well. Some pairs of facts cannot both be perfectly sharp at the same time. The more tightly you pin down one, the less tightly you can pin down the other. This is the uncertainty principle. It is a rule about nature, not a slogan that “nothing is real.”
+
+Energy can also come in packets. That is why the field is called “quantum.” Light can arrive as photons. An atom can jump from one energy level to another. Those jumps are why many modern devices work.
+
+How this works in daily life
+
+You do not need a lab to live with quantum physics. You already use it.
+
+Your phone and computer.
+Chips are made of semiconductors. Electrons in those materials do not move like tiny cars on a road. They follow quantum rules about energy levels and what paths are allowed. Transistors switch on and off because engineers learned those rules well enough to control current. No quantum theory, no modern electronics.
+
+LED lights and phone screens.
+An LED is not just “a small bulb.” Electrons drop from one energy level to another and release photons. The color depends on the size of that jump. That is quantum behavior turned into light you can read by.
+
+Lasers.
+A laser is a crowd of atoms sending out photons in a coordinated way. Barcode scanners, some medical tools, fiber-optic internet, and many pointers use this. The coordinated light starts from electrons and energy levels, not from a regular flashlight trick.
+
+Cameras and solar panels.
+Light hits a surface as photons. Those photons can kick electrons and make a current or a signal. Your phone camera and a solar panel both depend on that. Light is not only a smooth wave in these devices. It also acts like packets.
+
+MRI scans.
+An MRI machine does not take a normal photo of your body. It uses quantum properties of atomic nuclei in water and tissue, plus strong magnets and radio waves, to build an image. The hospital machine is large. The rule it uses is small-scale physics.
+
+GPS and exact time.
+GPS needs clocks that stay accurate. The best clocks count very stable vibrations in atoms. Those clocks are built on quantum energy levels. Your maps app feels ordinary. The timing behind it is not.
+
+Chemistry in your body and kitchen.
+Bonds between atoms are about how electrons are shared or arranged. That arrangement is a quantum problem. Cooking, breathing, batteries, and medicines all sit on chemistry, and chemistry sits on electrons following quantum rules.
+
+Why the world still looks “normal”
+
+If atoms are strange, why does a table feel solid and a coin feel like one coin?
+Because a table is not one electron. It is an enormous number of atoms. When huge numbers of quantum events add up, the odd details usually average out. You get a stable object with one place, one weight, and one temperature. The strange layer is still there. You just meet the finished version of it.
+
+That is why quantum physics can sound unreal and still run the real world.
+
+What quantum physics is not
+
+It is not a free pass to say anything. “Quantum” does not mean “my wish is science.” It does not mean every feeling is a particle experiment. It does not erase cause and effect in daily life.
+
+The real theory is strict. It gives numbers. Experiments test those numbers. When a claim cannot be tested, or when it ignores the actual rules, it is no longer quantum physics. It is only using a famous word.</div>
+        </article>
+        <div class="feed" id="quantum-feed" style="margin-top:16px"></div>
       </div>
     </section>
 
-    <section id="topics">
+    <section id="neuroscience">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2>Live questions in the field</h2>
-            <p>Use these as tags when you post. The science is unsettled. That is the point.</p>
+            <h2>Neuroscience</h2>
+            <p>Notes on the brain, nerves, and how actions get built from cells. This section is new. More notes can go here.</p>
           </div>
         </div>
-        <div class="topics">
-          <article class="topic">
-            <h3>Quantum biology in neurons</h3>
-            <p>Can coherence, tunneling, or nuclear spin survive long enough in warm tissue to change firing, olfaction, or anesthesia?</p>
-          </article>
-          <article class="topic">
-            <h3>Orch-OR and microtubules</h3>
-            <p>Penrose–Hameroff still drive experiments on anesthetic binding and claimed room-temperature quantum effects in tubulin.</p>
-          </article>
-          <article class="topic">
-            <h3>Quantum-like cognition</h3>
-            <p>Quantum probability as a math language for context, order effects, and “mental entanglement” — even if the wetware is classical.</p>
-          </article>
-          <article class="topic">
-            <h3>Quantum sensors &amp; materials</h3>
-            <p>2D semiconductors, NV centers, and nano-NMR as tools to watch cells, not claims that the cell itself is a qubit.</p>
-          </article>
-          <article class="topic">
-            <h3>Quantum computing for neuroscience</h3>
-            <p>Using actual quantum hardware or QML on EEG, MRI, connectomes, and protein data that choke classical pipelines.</p>
-          </article>
-          <article class="topic">
-            <h3>Neuromorphic quantum hardware</h3>
-            <p>Spin glasses, optical associative memory, and materials that compute like synapses rather than like Turing tapes.</p>
-          </article>
-        </div>
+        <article class="card">
+          <div class="card-meta"><span>2026</span><span class="tag violet">open</span><span>A.</span></div>
+          <h3>Neuroscience desk</h3>
+          <div class="authors">A.</div>
+          <p class="abstract">This section is for brain science on its own terms: neurons, circuits, memory, sensing, and action. It is not a dump of quantum slogans onto the brain. First notes can start here.</p>
+        </article>
+        <div class="feed" id="neuro-feed" style="margin-top:16px"></div>
       </div>
     </section>
 
@@ -112,18 +140,25 @@
         <div class="section-head">
           <div>
             <h2>Post a note</h2>
-            <p>Title, authors, a short abstract. Optional link to the paper or preprint.</p>
+            <p>Pick a section first. Quantum physics or neuroscience.</p>
           </div>
         </div>
         <form class="form-panel" id="post-form">
           <div class="form-grid">
-            <div class="field full">
-              <label for="title">Title</label>
-              <input id="title" name="title" required maxlength="220" placeholder="A short, specific title" />
+            <div class="field">
+              <label for="section">Section</label>
+              <select id="section" name="section" required>
+                <option value="quantum-physics">Quantum physics</option>
+                <option value="neuroscience">Neuroscience</option>
+              </select>
             </div>
             <div class="field">
-              <label for="authors">Authors</label>
-              <input id="authors" name="authors" required placeholder="A." />
+              <label for="authors">Author</label>
+              <input id="authors" name="authors" required value="A." />
+            </div>
+            <div class="field full">
+              <label for="title">Title</label>
+              <input id="title" name="title" required maxlength="220" />
             </div>
             <div class="field">
               <label for="year">Year</label>
@@ -131,45 +166,18 @@
             </div>
             <div class="field">
               <label for="tags">Tags</label>
-              <input id="tags" name="tags" placeholder="microtubules, EEG, review" />
-            </div>
-            <div class="field">
-              <label for="link">Link (optional)</label>
-              <input id="link" name="link" type="url" placeholder="https://arxiv.org/abs/…" />
+              <input id="tags" name="tags" placeholder="neurons, memory" />
             </div>
             <div class="field full">
-              <label for="abstract">Abstract / note</label>
-              <textarea id="abstract" name="abstract" required placeholder="What did you find, claim, or want others to look at?"></textarea>
+              <label for="abstract">Note</label>
+              <textarea id="abstract" name="abstract" required></textarea>
             </div>
           </div>
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Publish to archive</button>
-            <span class="hint">Stored locally in your browser. Not uploaded to a server.</span>
+            <button class="btn btn-primary" type="submit">Publish</button>
             <span class="toast" id="toast"></span>
           </div>
         </form>
-      </div>
-    </section>
-
-    <section id="publisher">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <h2>Publisher</h2>
-            <p>Who hosts this desk, and what it is for.</p>
-          </div>
-        </div>
-        <div class="card">
-          <p class="authors">Quantum Cortex Press</p>
-          <p class="abstract">
-            This site is an independent notebook for clear writing on quantum physics and neuroscience —
-            not slogans, and not mysticism dressed as a paper.
-          </p>
-          <p class="abstract" style="margin-top:12px">
-            The aim is simple. Explain the physics carefully. Explain the brain carefully. Say what is measured,
-            what is a model, and what is still a guess. Quantum Cortex is not a university press and not a peer-review journal.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -177,16 +185,12 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2>About this desk</h2>
-            <p>Built as a working prototype, not a peer-review journal.</p>
+            <h2>About</h2>
+            <p>Independent notebook. Not a journal.</p>
           </div>
         </div>
         <div class="card">
-          <p class="abstract">
-            Quantum neuroscience sits in a noisy gap. Some papers hunt for real quantum effects inside neurons.
-            Some only borrow quantum math because it fits cognitive data. Some build sensors and algorithms
-            that help neuroscience without claiming the brain is quantum at all.
-          </p>
+          <p class="abstract">Quantum Cortex keeps quantum physics and neuroscience in two sections. Extra notes you type here stay in this browser unless they are added to the site files.</p>
         </div>
       </div>
     </section>
@@ -194,12 +198,12 @@
 
   <footer>
     <div class="wrap foot-row">
-      <div>Quantum Cortex · Quantum Cortex Press</div>
-      <div>Independent research notebook. Not a university journal.</div>
+      <div>Quantum Cortex</div>
+      <div>Quantum physics · Neuroscience</div>
     </div>
   </footer>
 
-  <script src="js/neural-field.js?v=4"></script>
-  <script src="js/app.js?v=4"></script>
+  <script src="js/neural-field.js?v=5"></script>
+  <script src="js/app.js?v=5"></script>
 </body>
 </html>
